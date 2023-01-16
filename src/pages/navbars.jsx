@@ -1,7 +1,7 @@
 import React from 'react'
 import { navbars } from '../components'
 
-const Headers = () => {
+const Navbars = () => {
   return (
     <div>
       { navbars.map((Navbar,index)=>(
@@ -13,4 +13,4 @@ const Headers = () => {
   )
 }
 
-export default Headers
+export default Navbars
