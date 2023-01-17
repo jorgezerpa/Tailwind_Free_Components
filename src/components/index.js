@@ -12,6 +12,8 @@ import { Header2 } from './headers/Header2'
 import { Header3 } from './headers/Header3'
 import { Header4 } from './headers/Header4'
 
+import { Pricing1 } from './pricing/Pricing1'
 
 export const navbars = [ Navbar1, Navbar2, Navbar3, Navbar4, Navbar5, Navbar6, Navbar7, Navbar8 ]
 export const headers = [ Header1, Header2, Header3, Header4 ]
+export const pricing = [ Pricing1 ]
