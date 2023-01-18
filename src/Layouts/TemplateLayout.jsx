@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokaiSublime } from 'react-syntax-highlighter/dist/cjs/styles/hljs/';
 
-export const TemplateLayout = ({ children }) => {
+const textCode = `<p>No Code provided.</p>`
+
+export const TemplateLayout = ({ children, code=textCode }) => {
   const [showCodeBlock, setShowCodeBlock] = useState(false)
   return (
-    <div className='mb-10'>
-        <div className='w-full pb-1 px-10 flex gap-5 justify-end'>
-            <p onClick={()=>setShowCodeBlock(!showCodeBlock)} className=''>See Code</p>           
-            <p className=''>Copy Code</p>           
+    <div className='mb-20'>
+        <div className='w-full pb-1 px-10 mb-5'>
+            <p onClick={()=>setShowCodeBlock(!showCodeBlock)} className='w-full font-bold text-gray-900 text-xl border-b-2 border-black pb-2 text-right'>See Code</p>           
         </div>
-        <div className={`${!showCodeBlock && 'hidden'} w-full min-h-[400px] bg-purple-600`}>
-
+        <div className={`${!showCodeBlock && 'hidden'} w-full px-5`}>
+            <SyntaxHighlighter  language='javascript' style={monokaiSublime} showLineNumbers>
+              { code }
+            </SyntaxHighlighter>
         </div>
         <div className='relative'>
             { children }             
