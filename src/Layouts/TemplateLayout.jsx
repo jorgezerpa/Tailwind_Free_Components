@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { monokaiSublime } from 'react-syntax-highlighter/dist/cjs/styles/hljs/';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/hljs/';
 
 const textCode = `<p>No Code provided.</p>`
 
@@ -12,7 +12,7 @@ export const TemplateLayout = ({ children, code=textCode }) => {
             <p onClick={()=>setShowCodeBlock(!showCodeBlock)} className='w-full font-bold text-gray-900 text-xl border-b-2 border-black pb-2 text-right'>See Code</p>           
         </div>
         <div className={`${!showCodeBlock && 'hidden'} w-full px-5`}>
-            <SyntaxHighlighter  language='javascript' style={monokaiSublime} showLineNumbers>
+            <SyntaxHighlighter  language='javascript' style={dracula} showLineNumbers>
               { code }
             </SyntaxHighlighter>
         </div>
